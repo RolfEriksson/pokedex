@@ -1,6 +1,6 @@
 import React, { useCallback, useEffect, useMemo, useState } from 'react';
 import Axios from 'axios';
-import { DetailsModal, List } from '../components';
+import { List } from '../components';
 import { PAGE_SIZE } from '../../../shared/constants';
 import { Pokemon } from '../interfaces';
 import { DetailsContainer } from './DetailsContainer';

@@ -1,5 +1,5 @@
 import React from 'react';
-import { ActivityIndicator, Image, Modal, ModalProps, ScrollView, StyleSheet, Text, TouchableOpacity, View } from 'react-native';
+import { ActivityIndicator, Modal, ModalProps, ScrollView, StyleSheet, Text, TouchableOpacity, View } from 'react-native';
 import { AntDesign } from '@expo/vector-icons'; 
 import { Pokemon } from '../interfaces';
 import { PADDING_SIZE } from '../../../shared/constants';
@@ -33,15 +33,6 @@ export const DetailsModal: React.FC<DetailsModalProps> = ({ pokemon, onClose, lo
             <View style={styles.pokemonImages}>
               <PokemonThumbnail uri={pokemon.sprites.front_default} />
               <PokemonThumbnail uri={pokemon.sprites.back_default} />
-              {/* <Image
-                  source={{ uri: pokemon.sprites.front_default }}
-                  style={{ width: "50%", minHeight: 100 }}
-                /> */}
-              {/* <Image
-                  source={{ uri: pokemon.sprites.back_default }}
-                  style={{ width: "50%", minHeight: 100 }}
-                /> */}
-              {/* <Image source={{ uri: pokemon.sprites.front_default}} style={{ flex: 1 }} /> */}
             </View>
             <View style={styles.row}>
               <Text style={styles.subtitle}>Types</Text>

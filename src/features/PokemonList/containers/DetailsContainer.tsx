@@ -1,12 +1,13 @@
-import React, { useCallback, useEffect, useMemo, useState } from "react";
+import React, { useEffect, useState } from "react";
 import Axios from "axios";
-import { DetailsModal, List } from "../components";
-import { PAGE_SIZE } from "../../../shared/constants";
+import { DetailsModal } from "../components";
 import { Pokemon } from "../interfaces";
 import { parseEvolutionChain } from "../../../shared/utils";
 
 interface DetailsContainerProps {
-  pokemon: Pokemon
+  pokemon: Pokemon;
+  onClose: () => void;
+  visible: boolean;
 }
 
 export const DetailsContainer: React.FC<DetailsContainerProps> = (props) => {
