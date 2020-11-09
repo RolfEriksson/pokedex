@@ -1,21 +1,38 @@
 import { StatusBar } from 'expo-status-bar';
 import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import { ImageBackground, StyleSheet, Text, View } from 'react-native';
+import { ListPage } from './src/features/PokemonList/pages';
+import { useFonts } from "expo-font";
+
+const pokemonImage = require("./assets/pokemon.png");
+
 
 export default function App() {
+  const [fontsLoaded] = useFonts({
+    "Pokemon-Solid": require("./assets/fonts/Pokemon-Solid.ttf"),
+  });
+  if (!fontsLoaded) {
+    return null;
+  }
   return (
-    <View style={styles.container}>
-      <Text>Open up App.tsx to start working on your app!</Text>
-      <StatusBar style="auto" />
+    <View style={styles.root}>
+      <ImageBackground source={pokemonImage} style={styles.backgroundImage} imageStyle={styles.imageStyle}>
+        <StatusBar hidden />
+        <ListPage />
+      </ImageBackground>
     </View>
   );
 }
 
 const styles = StyleSheet.create({
-  container: {
+  root: {
     flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
+    backgroundColor: "#f2f2f2",
   },
+  backgroundImage: {
+    flex: 1,
+  },
+  imageStyle: {
+    opacity: 0
+  }
 });
